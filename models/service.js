@@ -59,17 +59,30 @@ class Service {
          );
       });
    }
-   static async getById(id) { // получение отдельного сервиса по id
-     const service = await Service.getAll(); // получаем все сервисы с помощью метода getAll из класса Service
-       service.map(function(elem){
-         if (elem.id == id){
-            //console.log(elem);
-            let a = elem;
-            console.log(a);
-            return a;
+   static getById(paramID){
+   return new Promise((resolve, reject) => {
+      con.query(`SELECT * FROM service WHERE id=` + paramID,
+         (err, result) => {
+            if (err) {
+               reject(err);
+            } else {
+               resolve(result);
+            }
          }
-      });
+      );
+   });
    }
+   // static async getById(id) { // получение отдельного сервиса по id
+   //   const service = await Service.getAll(); // получаем все сервисы с помощью метода getAll из класса Service
+   //     service.map(function(elem){
+   //       if (elem.id == id){
+   //          //console.log(elem);
+   //          let a = elem;
+   //          console.log(a);
+   //          return a;
+   //       }
+   //    });
+   // }
    // static async getById(id) { // получение отдельного сервиса по id
    //   const service = await Service.getAll(); // получаем все сервисы с помощью метода getAll из класса Service
    //    return service.find(x => x.id === id);

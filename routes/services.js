@@ -13,23 +13,32 @@ const Service = require('../models/service');
 //    }
 // );
  router.get('/', (req, res) => {
-    
-   Service.getAll().then(result => {
+    Service.getAll().then(result => {
       res.render('services', { // название страницы в hbs
       services: JSON.parse(JSON.stringify(result))
       });
       }
    );
  });
+//  router.get('/:id', (req, res) => {
+//     Service.getById(req.params.id).then(result => {
+//       res.render('oneservice', { // название страницы в hbs
+//       services: JSON.parse(JSON.stringify(result)),
+//       title: `Автосервис ${result.name}`
+//       });
+//       }
+//    );
+//  });
 
  router.get('/:id', async (req, res) => {
-  console.log(req.params.id);
-   const service = await Service.getById(req.params.id);
-   console.log(service);
+   let result = await Service.getById(req.params.id);
+   console.log(result);
    
    res.render('oneservice', {
-     title: `Автосервис`,
-     service
+     name: result[0].name,
+     adress: result[0].adress,
+     title: `Автосервис ${result[0].name}`
+    
     });
  });
 
