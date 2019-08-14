@@ -1,0 +1,10 @@
+
+   <h1> Эта страница выводит все сервисы</h1>
+   
+   {{#each services}}
+   <div class="card">
+     <p>Название: {{name}} Адрес: {{adress}}</p>
+    
+     <div><a href="/services/{{id}}">Подробнее</a></div>
+    </div>
+      {{/each}}

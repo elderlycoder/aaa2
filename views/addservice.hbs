@@ -1,0 +1,90 @@
+  <h2> Это страница добавления сервиса</h2>
+  
+  <form action="/addservice" method="POST">
+    <ul class="flex-outer">
+      <li>
+        <label for"name">Название: </label>  
+        <input type="text" id="name" name="name" placeholder="Введите название сервиса"></li> 
+      <li>
+        <label for="city">Город:</label> 
+        <select id="city" name="city" size="4">
+          <option value="14">Воронеж</option>
+          <option value="15">Грозный</option>
+          <option value="16">Екатеринбург</option>
+          <option value="17">Иваново</option>
+          <option value="67">Тула</option>
+          <option value="14">Воронеж</option>
+          <option value="15">Грозный</option>
+          <option value="16">Екатеринбург</option>
+          <option value="17">Иваново</option>
+          <option value="67">Тула</option>
+        </select>
+        </li> 
+      <li>
+        <label for="adress">Адрес:</label> 
+        <input type="text" id="adress" name="adress" placeholder="Введите адрес"></li> 
+      <li>
+        <label for="rezhim">Режим работы:</label> 
+        <input type="text" id="rezhim" name="rezhim" placeholder="Укажите режим работы"></li> 
+      <li>
+        <label for="email">Контактный e-mail:</label>  
+        <input type="email" id="email" name="email" placeholder="Введите email"></li> 
+      <li>
+        <label for="site">Сайт:</label>  
+        <input type="text" id="site" name="site" placeholder="Введите адрес сайта (если есть)"></li> 
+      <li>
+        <p>Телефоны: </p>
+        <ul class="flex-inner">
+          <li>
+            <p> Основной:</p>
+            <span class="tip-addservice">Формат: 8-999-000-1234</span>  
+              <input type="tel" id="phone1" name="phone1" </li>
+          <li>
+            <p>Дополнительный:</p>
+            <span class="tip-addservice">Формат: 8-999-000-1234</span> 
+              <input type="text" name="phone2" placeholder="если есть"> </li>
+        </ul>
+      <li>
+        <p> Специализация: </p>
+        
+        <ul class="flex-inner"> 
+          <span class="tip-addservice"> Отметьте виды работ выполняемые в вашем сервисе</span>          
+          <li><input type="checkbox" value="1" name="raboty"> техническое обслуживание</li>
+          <li><input type="checkbox" value="2" name="raboty"> ремонт подвески</li>
+          <li><input type="checkbox" value="3" name="raboty"> тормозная система</li>
+          <li><input type="checkbox" value="4" name="raboty"> рулевое управление</li>
+          <li><input type="checkbox" value="5" name="raboty"> трансмиссия</li>
+          <li><input type="checkbox" value="6" name="raboty"> двигатель</li>
+          <li><input type="checkbox" value="7" name="raboty"> топливная система</li>
+          <li><input type="checkbox" value="8" name="raboty"> охлаждение и обогрев</li>
+          <li><input type="checkbox" value="9" name="raboty"> выхлопная система</li>
+          <li><input type="checkbox" value="10" name="raboty"> электрика</li>
+          <li><input type="checkbox" value="11" name="raboty"> кузовной ремонт</li>
+          <li><input type="checkbox" value="12" name="raboty"> стекла, оптика, зеркала</li>
+          <li><input type="checkbox" value="13" name="raboty"> шиномонтаж</li>
+          <li><input type="checkbox" value="14" name="raboty"> автомойка</li>
+          <li><input type="checkbox" value="15" name="raboty"> детейлинг</li>
+          <li><input type="checkbox" value="16" name="raboty"> дополнительное оборудование</li>
+      </ul>
+    </li>
+    <li>
+        <p>Способы оплаты:</p> 
+        <ul class="flex-inner">
+          <li>
+            <input type="checkbox" value="1" name="oplata"> наличные</li>
+          <li>
+            <input type="checkbox" value="2" name="oplata">пластиковые карты</li>
+          <li>
+            <input type="checkbox" value="3" name="oplata">безналичный расчет</li>
+          <li>
+            <input type="checkbox" value="4" name="oplata">электронный платеж</li>
+        </ul>
+    </li>
+      <li>
+        <label for="descrption">  Описание:</label>
+        <textarea rows="8" id="description" name="desc" placeholder="Дополнительное описание вашего сервиса. Какие работы предпочитаете. Наличие сертификатов, специнструмента. На каких марках специализируетесь. Как лучше подъехать. Дополнительные услуги."></textarea>
+      </li>      
+      <li><button type="submit">Отправить</button></li>  
+  </ul>
+</form>
+  
