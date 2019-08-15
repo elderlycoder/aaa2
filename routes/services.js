@@ -35,9 +35,9 @@ const Service = require('../models/service');
    console.log(result);
    
    res.render('oneservice', {
-     name: result[0].name,
-     adress: result[0].adress,
-     title: `Автосервис ${result[0].name}`
+     name: result.name,
+     adress: result.adress,
+     title: `Автосервис ${result.name}`
     
     });
  });

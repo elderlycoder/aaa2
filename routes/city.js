@@ -13,6 +13,7 @@ const Service = require('../models/service');
       });
    }
 );
+
  router.get('/tula', async (req, res) => {
    let cityNumber = 67;
    let result = await Service.getInCity(cityNumber);
@@ -24,10 +25,6 @@ const Service = require('../models/service');
    }
 );
 
-router.get('/tula', (req, res) => {
-   res.render('city/tula', { 
-            title: 'Все автосервисы в Туле, адреса, режим работы, контакты'
-      });
-   });
+
 
 module.exports = router;
