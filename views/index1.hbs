@@ -1,0 +1,118 @@
+
+    <button class="open-popup" data-popup="popup1">Выберете город</button>
+    <div id="popup1" class="popup hide-popup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3 class="modal-h3"> Модальное окно с регионами</h3> 
+                <span class="close modal-close"> &times;</span>               
+            </div>
+            <div>
+                <a href="#" class="modal-close" data-modal="#sign-in"> Костромская область </a>
+            </div>
+            <div class="row-modal">
+                <ul>
+                     {{#each res1}}
+   <div class="card">    
+     <div><a href="/{{id_city}}">{{name_city}}</a></div>
+    </div>
+      {{/each}}
+                    
+                </ul>           
+                <ul>
+                   {{#each res2}}
+   <div class="card">    
+     <div><a href="/{{id_city}}">{{name_city}}</a></div>
+    </div>
+      {{/each}}
+                </ul>                          
+                <ul>
+                   {{#each res3}}
+   <div class="card">    
+     <div><a href="/{{id_city}}">{{name_city}}</a></div>
+    </div>
+      {{/each}}
+                    
+                </ul> 
+            </div> 
+        </div>         
+    </div>                
+    <button class="open-popup" data-popup="popup2">Укажите марку</button>
+    <div>Ваш город: </div>
+    <div id="popup2" class="popup hide-popup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3 class="modal-h3"> Модальное окно с марками</h3>
+                <span class="close modal-close"> &times;</span>
+            </div>
+            <div class="row-modal">
+   
+                <ul>
+                    <li> Lada (ВАЗ)</li>
+                    <li> Audi</li>
+                    <li> BMW</li>
+                    <li> Cadillac</li>
+                    <li> Chery</li>
+                    <li> Chevrolet</li>
+                    <li> Citroen</li>
+                </ul>           
+               <ul>
+                    <li> Lada (ВАЗ)</li>
+                    <li> Audi</li>
+                    <li> BMW</li>
+                    <li> Cadillac</li>
+                    <li> Chery</li>
+                    <li> Chevrolet</li>
+                    <li> Citroen</li>
+                </ul>                
+               <ul>
+                    <li> Lada (ВАЗ)</li>
+                    <li> Audi</li>
+                    <li> BMW</li>
+                    <li> Cadillac</li>
+                    <li> Chery</li>
+                    <li> Chevrolet</li>
+                    <li> Citroen</li>
+                </ul>  
+            </div>
+        </div>
+    </div>
+
+                
+    <div style="clear: both;"></div>
+    <div class="tabs-popup div-wrap">
+        <ul>
+            <li class="tab" data-oper="1">ТО</li>
+            <li class="tab" data-oper="2">Сервисное</li>
+            <li class="tab" data-oper="3">Ходовая</li>
+            <li class="tab" data-oper="4">КПП</li>
+            <li class="tab" data-oper="5">Кузов</li>
+        </ul>
+    </div>
+
+    <div class="div-wrap">
+        <div class="tab-body" data="1">
+            <p>Замена масляного фильтра</p> 
+            <p>Замена масла</p> 
+        </div>
+    
+        <div class="tab-body" data="2">
+            <p><input type="checkbox">Заправка кондиционера</p>
+            <p><input type="checkbox">Установка сигнализации</p>
+        </div>
+        <div class="tab-body" data="3">
+            <p>Замена сайлентблоков</p> 
+            <p>Замена амортизатора</p> 
+        </div>
+        <div class="tab-body" data="4">
+            <p>Ремонт вариатора</p> 
+            <p>Замена масла АКПП</p> 
+        </div>
+        
+        <div class="tab-body" data="5">
+            <p>Покраска бампера</p> 
+            <p>Покраска крыла</p> 
+        </div>
+        
+    </div>   
+    <div id="vyvod"></div>
+    

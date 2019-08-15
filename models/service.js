@@ -59,6 +59,20 @@ class Service {
          );
       });
    }
+   
+      static getCity(paramID){
+      return new Promise((resolve, reject) => {
+         con.query(`SELECT * FROM city WHERE id_city=` + paramID,
+            (err, result) => {
+               if (err) {
+                  reject(err);
+               } else {
+                  resolve(result);
+               }
+            }
+         );
+      });
+      }
    static getInCity(cityNumber) {
       return new Promise((resolve, reject) => {
          con.query(`SELECT * FROM service WHERE city=` + cityNumber,
@@ -72,32 +86,42 @@ class Service {
          );
       });
    }
-   // static getById(paramID){
-   // return new Promise((resolve, reject) => {
-   //    con.query(`SELECT * FROM service WHERE id=` + paramID,
-   //       (err, result) => {
-   //          if (err) {
-   //             reject(err);
-   //          } else {
-   //             resolve(result);
-   //          }
-   //       }
-   //    );
-   // });
-   // }
-      static async getById(id) { // получение отдельного сервиса по id
-      const service = await Service.getAll(); // получаем все сервисы с помощью метода getAll из класса Service
-         for(let i=0; i<service.length; i++){
-            if (service[i].id == id){
-               let a = service[i];
-               console.log(typeof a);
-               return a;
+      static getById(paramID){
+      return new Promise((resolve, reject) => {
+         con.query(`SELECT * FROM service WHERE id=` + paramID,
+            (err, result) => {
+               if (err) {
+                  reject(err);
+               } else {
+                  resolve(result);
+               }
             }
-         }
+         );
+      });
       }
       // static async getById(id) { // получение отдельного сервиса по id
       // const service = await Service.getAll(); // получаем все сервисы с помощью метода getAll из класса Service
-      //    return service.find(x => x.id === id);
+      //    for(let i=0; i<service.length; i++){
+      //       if (service[i].id == id){
+      //          let a = service[i];
+      //          console.log(typeof a);
+      //          return a;
+      //       }
+      //    }
+      // }
+     
+         // static getCervicesInCityById(paramID){
+      // return new Promise((resolve, reject) => {
+      //    con.query(`SELECT * FROM service WHERE city=` + paramID,
+      //       (err, result) => {
+      //          if (err) {
+      //             reject(err);
+      //          } else {
+      //             resolve(result);
+      //          }
+      //       }
+      //    );
+      // });
       // }
 }
 module.exports = Service;

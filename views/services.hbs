@@ -2,10 +2,14 @@
    <h1> Эта страница выводит все сервисы</h1>
    
    {{#each services}}
-   <div class="card">
-     <p>Название: {{name}} </p>
-     <p>Адрес: {{adress}}</p>
-    
-     <div><a href="/services/{{id}}">Подробнее</a></div>
+   <div class="row">
+     <div class="col s6 offset-s3">
+      <div class="card">
+        <p>Название: {{name}} </p>
+        <p>Адрес: {{adress}} Режим работы: {{rezhim}}</p>
+        
+        <div><a href="/services/{{id}}">Подробнее</a></div>
+        </div>
+      </div>
     </div>
       {{/each}}
