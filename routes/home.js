@@ -4,7 +4,8 @@ const router = Router();
 
 router.get('/', (req, res) => {
    res.render("index",{
-      title: 'Все автосервисы. Контакты, режим работы, услуги, отзывы'
+      title: 'Все автосервисы. Контакты, режим работы, услуги, отзывы', 
+      isHome: true
    }); 
 });
 

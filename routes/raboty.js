@@ -5,13 +5,10 @@ const bodyParser = require("body-parser");
 
 router.get('/', (req, res) => {
    res.render("raboty", {
-      title: 'Каталог услуг которые предоставляют автосервисы'
+      title: 'Каталог услуг которые предоставляют автосервисы',
+      isRaboty: true
    }); 
 });
-router.get('/', (req, res) => {
-   res.render("control", {
-      title: 'Контрольная страница'
-   }); 
-});
+
 
 module.exports = router; // экспортируем объект router для использования его за пределами этого файла

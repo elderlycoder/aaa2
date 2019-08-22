@@ -2378,8 +2378,11 @@ textarea {
   font-size: 100%;
   /* 1 */
   line-height: 1.15;
+  border-width: 1px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
   /* 1 */
-  margin: 0;
+  /*margin: 8px;;*/
   /* 2 */
 }
 
@@ -4489,7 +4492,7 @@ a {
 }
 
 html {
-  line-height: 1.5;
+ /* line-height: 1.5;*/
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.87);
@@ -6097,8 +6100,8 @@ button:focus {
 }
 
 label {
-  font-size: 0.8rem;
-  color: #9e9e9e;
+  /*font-size: 0.8rem;
+  color: #9e9e9e;*/
 }
 
 /* Text Inputs + Textarea
@@ -6669,7 +6672,7 @@ textarea.materialize-textarea + label:after, .select-wrapper + label:after {
 /* Textarea */
 textarea {
   width: 100%;
-  height: 3rem;
+ /* height: 3rem;*/
   background-color: transparent;
 }
 
@@ -6839,13 +6842,13 @@ textarea.materialize-textarea {
 
 /* Checkboxes
    ========================================================================== */
-/* Remove default checkbox */
+/* Remove default checkbox 
 [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
   position: absolute;
   opacity: 0;
   pointer-events: none;
-}
+}*/
 
 [type="checkbox"] {
   /* checkbox aspect */
@@ -7138,7 +7141,7 @@ input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::before {
 /* Select Field
    ========================================================================== */
 select {
-  display: none;
+ /* display: none;*/
 }
 
 select.browser-default {
@@ -7151,7 +7154,7 @@ select {
   padding: 5px;
   border: 1px solid #f2f2f2;
   border-radius: 2px;
-  height: 3rem;
+  /*height: 3rem;*/
 }
 
 .select-label {

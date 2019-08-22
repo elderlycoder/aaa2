@@ -62,7 +62,7 @@
 .active{
     font-weight: bold;
 }
-.tab{
+.tab-modal{
     cursor: pointer;
     border: 1px solid #666;
     padding: 5px;

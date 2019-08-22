@@ -12,7 +12,7 @@ nav{
 nav ul{
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: space-around;
 }
@@ -133,6 +133,8 @@ ul.FlexString li {
    text-decoration: underline;
    margin: 5px;
    padding: 3px;
+   width: 100%;
+   font-size: 1.5rem
 }
 
 /*стили вехнего меню*/
@@ -143,3 +145,6 @@ ul.FlexString li {
 .header-nav a {
   text-decoration: none;
 }
+
+/*  стиль для страницы вход */
+.auth {padding-top: 2rem;}

@@ -7,7 +7,8 @@ const urlencodedParser = bodyParser.urlencoded({extended: false});
 
 router.get('/', (req, res) => {
    res.render("addservice", {
-      title: 'Добавить автосервис. Контакты, режим работы, услуги, отзывы'
+      title: 'Добавить автосервис. Контакты, режим работы, услуги, отзывы',
+      isAddservice: true
    });
 });
 router.post("/", urlencodedParser, function (req, res) {

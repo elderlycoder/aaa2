@@ -41,7 +41,7 @@ function init(){
 }
 init();
 
-let tabs = document.querySelectorAll('.tab')
+let tabs = document.querySelectorAll('.tab-modal')
 tabs.forEach(function(element){
     element.onclick = showTab;
 });
@@ -57,7 +57,7 @@ function showTab(){
     document.querySelector(`.tab-body[data="${data}"]`).style.display = 'block';
     //document.querySelector('.tab-body[data="'+data+'"').style.display = 'block';
 }
-let to = document.querySelectorAll('.tab');
+let to = document.querySelectorAll('.tab-modal');
     to.forEach(function(item){
     item.addEventListener('click', function(){
         let operation = item.getAttribute('data-oper');
@@ -69,5 +69,6 @@ let userCity = document.querySelectorAll('.city');
     userCity.forEach(function(elem){
         elem.addEventListener('click', function(){
             console.log(elem.id);
-        })
-    })
+        });
+    });
+

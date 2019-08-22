@@ -4,8 +4,10 @@ const Service = require('../models/service');
 
  router.get('/', (req, res) => {
     Service.getAll().then(result => {
-      res.render('services', { // название страницы в hbs
-      services: JSON.parse(JSON.stringify(result))
+      res.render('services', { 
+        title: 'Все автосервисы',// название страницы в hbs
+        services: JSON.parse(JSON.stringify(result)),
+        isServices: true
       });
       }
    );
