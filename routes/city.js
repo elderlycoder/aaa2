@@ -4,23 +4,25 @@ const Service = require('../models/service');
 const cookieParser = require('cookie-parser');
 
 router.use(cookieParser());
-    
+
+// const cityCookie = function (req, res, next) { 
+//    res.cookie("userData", "users15"); 
+//    res.send('user data added to cookie'); 
+//    next();
+//    };  
    
- router.get('/voronezh', async (req, res, next) => {
+// router.use(cityCookie);
+   
+router.get('/voronezh', async (req, res) => {
    const cityNumber = 14;
    let result = await Service.getInCity(cityNumber);
-   
+   res.cookie("userCity", cityNumber);
    res.render('city/voronezh', {
             title: 'Все автосервисы Воронежа,услуги, адреса, режим работы, контакты',
             services: JSON.parse(JSON.stringify(result))
             });
-            next();
    });
 
-router.use('/voronezh', (req, res)=>{ 
-      res.cookie("userData", "users11"); 
-      res.send('user data added to cookie'); 
-      }); 
 
  router.get('/tula', async (req, res) => {
    let cityNumber = 67;
