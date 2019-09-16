@@ -99,29 +99,35 @@ class Service {
          );
       });
       }
-      // static async getById(id) { // получение отдельного сервиса по id
-      // const service = await Service.getAll(); // получаем все сервисы с помощью метода getAll из класса Service
-      //    for(let i=0; i<service.length; i++){
-      //       if (service[i].id == id){
-      //          let a = service[i];
-      //          console.log(typeof a);
-      //          return a;
-      //       }
-      //    }
-      // }
-     
-         // static getCervicesInCityById(paramID){
-      // return new Promise((resolve, reject) => {
-      //    con.query(`SELECT * FROM service WHERE city=` + paramID,
-      //       (err, result) => {
-      //          if (err) {
-      //             reject(err);
-      //          } else {
-      //             resolve(result);
-      //          }
-      //       }
-      //    );
-      // });
-      // }
+
+      static getAllNotValid() {
+         return new Promise((resolve, reject) => {
+            con.query(`SELECT * FROM service WHERE valid=0`,
+               (err, result) => {
+                  if (err) {
+                     reject(err);
+                  } else {
+                     resolve(result);
+                  }
+               }
+            );
+         });
+      }
+
+      static update(rezhim, email, valid, id){
+            //con.query(`UPDATE service SET rezhim=rezhim WHERE id=` + paramID,
+           con.query('UPDATE service SET rezhim=?, email=?, valid=? WHERE id=?', [rezhim, email, valid, id], function (err, data) {
+           if (err) return console.log(err);
+         });
+         }
+         
+   //   static async update(service) {
+   //      const services = await Service.getAll();
+
+   //      const idx = services.findIndex(c => c.id == service.id);
+   //      services[idx] = service[0];
+
+   //      console.log(services[idx])
+   //    }
 }
 module.exports = Service;

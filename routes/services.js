@@ -12,15 +12,15 @@ const Service = require('../models/service');
       }
    );
  });
-
+// вывод отдельного сервиса
  router.get('/:id', async (req, res) => {
-   let result = await Service.getById(req.params.id);
+   let result = await Service.getById(req.params.id); //
    console.log(result);
    
    res.render('oneservice', {
      name: result[0].name,
      adress: result[0].adress,
-     title: `Автосервис ${result.name}`
+     title: `Автосервис ${result[0].name}`
     
     });
  });

@@ -148,3 +148,81 @@ ul.FlexString li {
 
 /*  стиль для страницы вход */
 .auth {padding-top: 2rem;}
+
+.city-selected {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.row-modal-work li:hover {
+  cursor: pointer;
+  font-weight:bold;
+  color: #5d56d5
+}
+.row-modal-model li:hover {
+  cursor: pointer;
+  font-weight:bold;
+  color: #5d56d5
+}
+ul.mmenuu {
+  text-align: center;
+  margin: 3px;
+}
+ul.mmenuu > li {
+  /* Задаю выравнивание и позиционирование. */
+  float: left;
+  /* Считаем координаты относительно исходного места*/
+  position: relative;
+}
+ul.mmenuu > li {
+  /* Делаю элементы блочными: */
+  display: block;
+  /* Задаю белый цвет. */
+  color: #000;
+  /* Задаю отступ 10px. */
+  padding: 5px;
+  /* Убираю форматирование*/
+  text-decoration: none;
+  /* Задаю цвет.
+  background-color: #da570f;*/
+}
+ul.mmenuu > li:hover {
+  /* Задаю цвет при наведении. */
+  background-color: #fff;
+}
+ul.ssubmenuu {
+  /*position: absolute;*/
+  width: auto;
+  top: 1.5rem;
+  /*left:0.3rem;*/
+  /* Делаю субменю скрытыми. */
+  display: none;
+  /* Цвет — белый. */
+  background-color: white;
+}
+ul.ssubmenuu > li {
+  /* Блочное расположение элементов*/
+  display: block;
+}
+ul.ssubmenuu > li {
+  /* Делаю элементы блочными. */
+  display: block;
+  /* Убираю форматирование*/
+  text-decoration: none;
+  /* Задаю отступ. */
+  padding: 10px;
+  /* Задаю цвет. */
+  color: #000;
+  /* Еще цвет. */
+  background-color: #fff;
+}
+ul.ssubmenuu > li:hover {
+  /* Задаю подчеркивание при наведении*/
+  text-decoration: underline;
+}
+ul.mmenuu > li:hover > ul.ssubmenuu {
+  /* Делаю элементы блочными. */
+  display: block;
+}
+Источник: https://blogwork.ru/vypadayushhij-spisok-html/
+

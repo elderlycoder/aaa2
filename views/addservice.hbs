@@ -7,7 +7,8 @@
         <input type="text" id="name" name="name" placeholder="Введите название сервиса"></li> 
       <li>
         <label for="city">Город:</label> 
-        <select id="city" name="city" size="4" placeholder="ntcn">
+        <select id="city" name="city" size="3">
+         
           <option value="14">Воронеж</option>
           <option value="15">Грозный</option>
           <option value="16">Екатеринбург</option>
@@ -19,7 +20,9 @@
           <option value="17">Иваново</option>
           <option value="67">Тула</option>
         </select>
+        <div class="city-selected">выбран:<br><span id="city-current"></span></div>
         </li> 
+        
       <li>
         <label for="adress">Адрес:</label> 
         <input type="text" id="adress" name="adress" placeholder="Введите адрес"></li> 
@@ -38,34 +41,23 @@
           <li>
             <p> Основной:</p>
             <span class="tip-addservice">Формат: 8-999-000-1234</span>  
-              <input type="tel" id="phone1" name="phone1" </li>
+              <input type="tel" id="phone1" name="phone1"> </li>
           <li>
             <p>Дополнительный:</p>
             <span class="tip-addservice">Формат: 8-999-000-1234</span> 
               <input type="text" name="phone2" placeholder="если есть"> </li>
         </ul>
+
+
       <li>
         <p> Специализация: </p>
         
         <ul class="flex-inner"> 
           <span class="tip-addservice"> Отметьте виды работ выполняемые в вашем сервисе</span>          
-          <li><input type="checkbox" value="1" name="raboty"> техническое обслуживание</li>
-          <li><input type="checkbox" value="2" name="raboty"> ремонт подвески</li>
-          <li><input type="checkbox" value="3" name="raboty"> тормозная система</li>
-          <li><input type="checkbox" value="4" name="raboty"> рулевое управление</li>
-          <li><input type="checkbox" value="5" name="raboty"> трансмиссия</li>
-          <li><input type="checkbox" value="6" name="raboty"> двигатель</li>
-          <li><input type="checkbox" value="7" name="raboty"> топливная система</li>
-          <li><input type="checkbox" value="8" name="raboty"> охлаждение и обогрев</li>
-          <li><input type="checkbox" value="9" name="raboty"> выхлопная система</li>
-          <li><input type="checkbox" value="10" name="raboty"> электрика</li>
-          <li><input type="checkbox" value="11" name="raboty"> кузовной ремонт</li>
-          <li><input type="checkbox" value="12" name="raboty"> стекла, оптика, зеркала</li>
-          <li><input type="checkbox" value="13" name="raboty"> шиномонтаж</li>
-          <li><input type="checkbox" value="14" name="raboty"> автомойка</li>
-          <li><input type="checkbox" value="15" name="raboty"> детейлинг</li>
-          <li><input type="checkbox" value="16" name="raboty"> дополнительное оборудование</li>
-      </ul>
+          {{#each rabota}}
+          <li><input type="checkbox" value="{{this.value}}" name="raboty">{{this.title}}</li>
+          {{/each}}
+        </ul>
     </li>
     <li>
         <p>Способы оплаты:</p> 

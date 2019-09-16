@@ -1,4 +1,13 @@
 <h2>Это футер</h2>
-<script src="../js/materialize.js"></script>
-<script src="../js/modal.js"></script>
-<script src="../js/index.js"></script>
+<script src="../../js/materialize.js"></script>
+{{#if isHome}}
+<script src="../../js/modal.js"></script>
+{{/if}}
+<script src="../../js/index.js"></script>
+{{#if getScript}}
+    <script src="../../js/selectincity.js"></script>
+    {{/if}}
+   
+{{#if isAddservice}}
+<script src="../js/addservice.js"></script>
+{{/if}}

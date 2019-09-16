@@ -1,0 +1,81 @@
+<h1>Редактировать сервис</h1>
+
+
+<form action="/adm/edit-service/{{id}}" method="POST">
+    <ul class="flex-outer">
+      <li>
+        <label for"name">Название: </label>  
+        <input type="text" id="name" name="name" value="{{name}}"></li> 
+      <li>
+        <label for"city">Город: </label>  
+        <input type="text" id="city" name="city" value="{{city}}"></li> 
+      
+      <li>
+        <label for="adress">Адрес:</label> 
+        <input type="text" id="adress" name="adress" placeholder="Введите адрес"></li> 
+      <li>
+        <label for="rezhim">Режим работы:</label> 
+        <input type="text" id="rezhim" name="rezhim" value="{{rezhim}}"></li> 
+      <li>
+        <label for="email">Контактный e-mail:</label>  
+        <input type="email" id="email" name="email" placeholder="Введите email"></li> 
+      <li>
+        <label for="site">Сайт:</label>  
+        <input type="text" id="site" name="site" value="{{site}}"></li> 
+      <li>
+        <p>Телефоны: </p>
+        <ul class="flex-inner">
+          <li>
+            <p> Основной:</p>  
+              <input type="tel" id="phone1" name="phone1" value="{{phone1}}"> </li>
+          <li>
+            <p>Дополнительный:</p>
+              <input type="text" name="phone2" value="{{phone2}}"> </li>
+        </ul>
+      </li>
+    <li>
+        <p> Специализация: </p>
+        
+        <ul class="flex-inner"> 
+          <span class="tip-addservice"> Отметьте виды работ выполняемые в вашем сервисе</span>    
+          {{#each rabota}}
+          <li><input type="checkbox"  value="{{this.value}}" {{this.checked}} name="raboty">{{this.title}}</li>
+          {{/each}}
+          </ul>
+    </li>
+
+    <li>
+        <p>Способы оплаты:</p> 
+        <ul class="flex-inner">
+          <li>
+            <input type="checkbox" value="1" name="oplata">наличные</li>
+          <li>
+            <input type="checkbox" value="2" name="oplata">пластиковые карты</li>
+          <li>
+            <input type="checkbox" value="3" name="oplata">безналичный расчет</li>
+          <li>
+            <input type="checkbox" value="4" name="oplata">электронный платеж</li>
+        </ul>
+    </li>
+      <li>
+        <label for="descrption">  Описание:</label>
+        <textarea rows="8" id="description" name="desc" placeholder="Дополнительное описание вашего сервиса. Какие работы предпочитаете. Наличие сертификатов, специнструмента. На каких марках специализируетесь. Как лучше подъехать. Дополнительные услуги."></textarea>
+      </li>  
+     
+      <li>
+         <label for="id">  ID:</label>
+         <input type="text" id="id" name="id"value="{{id}}">
+      </li>    
+      <li>
+         <label for="password">  Пароль:</label>
+         <input type="text" id="password" name="pass" value="{{pass}}">
+      </li>    
+      <li>
+         <label for="valid">  Валид:</label>
+         <input type="text" id="valid" name="valid" value="{{valid}}">
+      </li>    
+      
+      <li><button type="submit">Отправить</button></li>  
+  </ul>
+</form>
+  

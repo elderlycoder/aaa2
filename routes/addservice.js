@@ -3,12 +3,14 @@ const router = Router();
 const Service = require('../models/service');
 const bodyParser = require("body-parser");
 const urlencodedParser = bodyParser.urlencoded({extended: false});
+const Raboty = require('../config/raboty');
 
 
 router.get('/', (req, res) => {
    res.render("addservice", {
+      rabota: Raboty,
       title: 'Добавить автосервис. Контакты, режим работы, услуги, отзывы',
-      isAddservice: true
+      isAddservice: true // переменная используется для активного пункта меню + используем для подключения скрипта
    });
 });
 router.post("/", urlencodedParser, function (req, res) {

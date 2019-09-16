@@ -2,56 +2,41 @@
     <div class="nav-wrapper">
        <a href="#" class="brand-logo">Авто-Адрес</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-       {{#if isAuth}}
+     
         {{#if isHome}}
         <li class="active" ><a href="/">Главная</a></li>
         {{else}}
         <li><a href="/">Главная</a></li>
         {{/if}}
+
         {{#if isRaboty}}
         <li class="active" ><a href="/raboty">Виды работ</a></li>
         {{else}}
         <li><a href="/raboty">Виды работ</a></li>
         {{/if}}
+
         {{#if isAddservice}}
         <li class="active" ><a href="/addservice">Добавить сервис</a></li>
         {{else}}
         <li><a href="/addservice">Добавить сервис</a></li>
         {{/if}}
+      
         {{#if isServices}}
         <li class="active" ><a href="/services">Все сервисы</a></li>
         {{else}}
         <li><a href="/services">Все сервисы</a></li>
-        {{/if}}
-         
+        {{/if}} 
+
+      {{#if isAuth}}
         <li class="active" ><a href="/auth/logout">Выйти</a></li>
-       {{else}}
-          {{#if isHome}}
-        <li class="active" ><a href="/">Главная</a></li>
-        {{else}}
-        <li><a href="/">Главная</a></li>
-        {{/if}}
-        {{#if isRaboty}}
-        <li class="active" ><a href="/raboty">Виды работ</a></li>
-        {{else}}
-        <li><a href="/raboty">Виды работ</a></li>
-        {{/if}}
-        {{#if isAddservice}}
-        <li class="active" ><a href="/addservice">Добавить сервис</a></li>
-        {{else}}
-        <li><a href="/addservice">Добавить сервис</a></li>
-        {{/if}}
-        {{#if isServices}}
-        <li class="active" ><a href="/services">Все сервисы</a></li>
-        {{else}}
-        <li><a href="/services">Все сервисы</a></li>
-        {{/if}}
+      {{else}}
+      
          {{#if isLogin}}
         <li class="active" ><a href="/auth/login#login">Вход</a></li>
         {{else}}
         <li><a href="/auth/login#login">Вход</a></li>
         {{/if}}
-       {{/if}}
+      {{/if}}
        
        
       </ul>

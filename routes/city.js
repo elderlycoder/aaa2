@@ -2,24 +2,21 @@ const {Router} = require('express'); // подключаем объект Router
 const router = Router();
 const Service = require('../models/service');
 const cookieParser = require('cookie-parser');
-
+const store = require('store');
 router.use(cookieParser());
 
-// const cityCookie = function (req, res, next) { 
-//    res.cookie("userData", "users15"); 
-//    res.send('user data added to cookie'); 
-//    next();
-//    };  
-   
-// router.use(cityCookie);
    
 router.get('/voronezh', async (req, res) => {
    const cityNumber = 14;
-   let result = await Service.getInCity(cityNumber);
+   let result = await Service.getInCity(cityNumber); // typeof - object
+   let numberOfServices = result.length;
+   //store.set('userCity', {name: 'cityNumber'});
    res.cookie("userCity", cityNumber);
    res.render('city/voronezh', {
+            city: cityNumber,  // данные для localStorage 
             title: 'Все автосервисы Воронежа,услуги, адреса, режим работы, контакты',
-            services: JSON.parse(JSON.stringify(result))
+            services: JSON.parse(JSON.stringify(result)),
+            number: numberOfServices
             });
    });
 
@@ -31,6 +28,18 @@ router.get('/voronezh', async (req, res) => {
    res.render('city/tula', {
             title: 'Все автосервисы в Туле, адреса, режим работы, контакты',
             services: JSON.parse(JSON.stringify(result))
+      });
+   }
+);
+ router.get('/kursk', async (req, res) => {
+   let cityNumber = 30;
+   let result = await Service.getInCity(cityNumber);
+   let getScript = true;
+   console.log(result);
+   res.render('city/kursk', {
+            title: 'Все автосервисы в Курске, адреса, режим работы, контакты',
+            services: JSON.parse(JSON.stringify(result)),
+            getScript: getScript
       });
    }
 );
